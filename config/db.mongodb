@@ -1,0 +1,822 @@
+db.createCollection("tipo_documento");
+db.tipo_documento.insertMany([
+  { tipodoc_id: 1, nombre: "Cédula de Ciudadanía", abreviatura: "C.C" },
+  { tipodoc_id: 2, nombre: "Tarjeta de identidad", abreviatura: "T.I" },
+  { tipodoc_id: 3, nombre: "Registro Civil", abreviatura: "R.C" },
+  { tipodoc_id: 4, nombre: "Cédula de Extranjería", abreviatura: "C.E" },
+  { tipodoc_id: 5, nombre: "Número de Identificación Personal", abreviatura: "N.I.P" },
+]);
+
+db.createCollection("genero");
+db.genero.insertMany([
+  { gen_id: 1, nombre: "Masculino", abreviatura: "M" },
+  { gen_id: 2, nombre: "Femenino", abreviatura: "F" },
+]);
+
+db.createCollection("acudiente");
+db.acudiente.insertMany([
+  {
+    "acu_id": 1,
+    "nombre": "María José Moreno",
+    "telefono": "+34 992766008",
+    "direccion": "Carrer Pacheco, 31, 7º 7º, 25257, Mireles Alta"
+  },
+  {
+    "acu_id": 2,
+    "nombre": "Carlos García",
+    "telefono": "+34 912345678",
+    "direccion": "Avenida Principal, 45, 3º A, 08001, Barcelona"
+  },
+  {
+    "acu_id": 3,
+    "nombre": "Laura Rodríguez",
+    "telefono": "+34 933333333",
+    "direccion": "Calle Delicias, 12, 2º B, 28045, Madrid"
+  },
+  {
+    "acu_id": 4,
+    "nombre": "Pedro López",
+    "telefono": "+34 944444444",
+    "direccion": "Plaza Mayor, 8, 4º C, 41001, Sevilla"
+  },
+  {
+    "acu_id": 5,
+    "nombre": "Isabel Martínez",
+    "telefono": "+34 955555555",
+    "direccion": "Calle Valencia, 20, 5º D, 46001, Valencia"
+  },
+  {
+    "acu_id": 6,
+    "nombre": "Juan Pérez",
+    "telefono": "+34 966666666",
+    "direccion": "Avenida Libertad, 15, 6º E, 03001, Alicante"
+  },
+  {
+    "acu_id": 7,
+    "nombre": "Ana Sánchez",
+    "telefono": "+34 977777777",
+    "direccion": "Carrer Gaudí, 22, 7º F, 08001, Barcelona"
+  },
+  {
+    "acu_id": 8,
+    "nombre": "Luis González",
+    "telefono": "+34 988888888",
+    "direccion": "Calle Mayor, 10, 8º G, 28001, Madrid"
+  },
+  {
+    "acu_id": 9,
+    "nombre": "Elena Fernández",
+    "telefono": "+34 999999999",
+    "direccion": "Calle Real, 5, 9º H, 41002, Sevilla"
+  },
+  {
+    "acu_id": 10,
+    "nombre": "Miguel Ángel Torres",
+    "telefono": "+34 933333333",
+    "direccion": "Calle Serrano, 30, 10º I, 28006, Madrid"
+  },
+  {
+    "acu_id": 11,
+    "nombre": "Carmen Ruiz",
+    "telefono": "+34 944444444",
+    "direccion": "Plaza España, 25, 11º J, 46002, Valencia"
+  },
+  {
+    "acu_id": 12,
+    "nombre": "Rafaela López",
+    "telefono": "+34 955555555",
+    "direccion": "Calle Alameda, 18, 12º K, 03002, Alicante"
+  },
+  {
+    "acu_id": 13,
+    "nombre": "Roberto Pérez",
+    "telefono": "+34 966666666",
+    "direccion": "Calle Mayor, 3, 13º L, 08002, Barcelona"
+  },
+  {
+    "acu_id": 14,
+    "nombre": "Sofía Sánchez",
+    "telefono": "+34 977777777",
+    "direccion": "Avenida Diagonal, 40, 14º M, 08003, Barcelona"
+  },
+  {
+    "acu_id": 15,
+    "nombre": "Daniel González",
+    "telefono": "+34 988888888",
+    "direccion": "Calle Gran Vía, 12, 15º N, 28013, Madrid"
+  },
+  {
+    "acu_id": 16,
+    "nombre": "María García",
+    "telefono": "+34 999999999",
+    "direccion": "Carrer Rambla, 8, 16º O, 46003, Valencia"
+  },
+  {
+    "acu_id": 17,
+    "nombre": "Manuel Martínez",
+    "telefono": "+34 933333333",
+    "direccion": "Plaza Cataluña, 20, 17º P, 03003, Alicante"
+  },
+  {
+    "acu_id": 18,
+    "nombre": "Laura Fernández",
+    "telefono": "+34 944444444",
+    "direccion": "Carrer Pau Casals, 15, 18º Q, 08004, Barcelona"
+  },
+  {
+    "acu_id": 19,
+    "nombre": "José López",
+    "telefono": "+34 955555555",
+    "direccion": "Calle Paseo, 5, 19º R, 28016, Madrid"
+  },
+  {
+    "acu_id": 20,
+    "nombre": "Isabel Rodríguez",
+    "telefono": "+34 966666666",
+    "direccion": "Avenida 9 de Octubre, 30, 20º S, 46004, Valencia"
+  }
+]);
+
+db.createCollection("usuario");
+db.usuario.insertMany([
+  {
+    "usu_id": 1,
+    "usu_nombres": "A",
+    "usu_apellidos": "Alberto",
+    "usu_telefono": "5646545654",
+    "uso_direccion": "Calle 10",
+    "uso_email": "pepin@gmail.com",
+    "uso_tipodoc": 1,
+    "uso_genero": 1,
+    "uso_acudiente": 1
+  },
+  {
+    "usu_id": 2,
+    "usu_nombres": "B",
+    "usu_apellidos": "Bertina",
+    "usu_telefono": "5646545655",
+    "uso_direccion": "Calle 20",
+    "uso_email": "berta@gmail.com",
+    "uso_tipodoc": 2,
+    "uso_genero": 2,
+    "uso_acudiente": 2
+  },
+  {
+    "usu_id": 3,
+    "usu_nombres": "C",
+    "usu_apellidos": "Carlos",
+    "usu_telefono": "5646545656",
+    "uso_direccion": "Calle 30",
+    "uso_email": "carlitos@gmail.com",
+    "uso_tipodoc": 3,
+    "uso_genero": 1,
+    "uso_acudiente": 3
+  },
+  {
+    "usu_id": 4,
+    "usu_nombres": "D",
+    "usu_apellidos": "Diana",
+    "usu_telefono": "5646545657",
+    "uso_direccion": "Calle 40",
+    "uso_email": "diana@gmail.com",
+    "uso_tipodoc": 4,
+    "uso_genero": 2,
+    "uso_acudiente": 4
+  },
+  {
+    "usu_id": 5,
+    "usu_nombres": "E",
+    "usu_apellidos": "Eduardo",
+    "usu_telefono": "5646545658",
+    "uso_direccion": "Calle 50",
+    "uso_email": "eduardo@gmail.com",
+    "uso_tipodoc": 5,
+    "uso_genero": 1,
+    "uso_acudiente": 5
+  },
+  {
+    "usu_id": 6,
+    "usu_nombres": "F",
+    "usu_apellidos": "Fernanda",
+    "usu_telefono": "5646545659",
+    "uso_direccion": "Calle 60",
+    "uso_email": "fernanda@gmail.com",
+    "uso_tipodoc": 1,
+    "uso_genero": 2,
+    "uso_acudiente": 6
+  },
+  {
+    "usu_id": 7,
+    "usu_nombres": "G",
+    "usu_apellidos": "Gabriel",
+    "usu_telefono": "5646545660",
+    "uso_direccion": "Calle 70",
+    "uso_email": "gabriel@gmail.com",
+    "uso_tipodoc": 2,
+    "uso_genero": 1,
+    "uso_acudiente": 7
+  },
+  {
+    "usu_id": 8,
+    "usu_nombres": "H",
+    "usu_apellidos": "Hortensia",
+    "usu_telefono": "5646545661",
+    "uso_direccion": "Calle 80",
+    "uso_email": "hortensia@gmail.com",
+    "uso_tipodoc": 3,
+    "uso_genero": 2,
+    "uso_acudiente": 8
+  },
+  {
+    "usu_id": 9,
+    "usu_nombres": "I",
+    "usu_apellidos": "Ignacio",
+    "usu_telefono": "5646545662",
+    "uso_direccion": "Calle 90",
+    "uso_email": "ignacio@gmail.com",
+    "uso_tipodoc": 4,
+    "uso_genero": 1,
+    "uso_acudiente": 9
+  },
+  {
+    "usu_id": 10,
+    "usu_nombres": "J",
+    "usu_apellidos": "Juana",
+    "usu_telefono": "5646545663",
+    "uso_direccion": "Calle 100",
+    "uso_email": "juana@gmail.com",
+    "uso_tipodoc": 5,
+    "uso_genero": 2,
+    "uso_acudiente": 10
+  },
+  {
+    "usu_id": 11,
+    "usu_nombres": "K",
+    "usu_apellidos": "Kike",
+    "usu_telefono": "5646545664",
+    "uso_direccion": "Calle 110",
+    "uso_email": "kike@gmail.com",
+    "uso_tipodoc": 1,
+    "uso_genero": 1,
+    "uso_acudiente": 11
+  },
+  {
+    "usu_id": 12,
+    "usu_nombres": "L",
+    "usu_apellidos": "Lorena",
+    "usu_telefono": "5646545665",
+    "uso_direccion": "Calle 120",
+    "uso_email": "lorena@gmail.com",
+    "uso_tipodoc": 2,
+    "uso_genero": 2,
+    "uso_acudiente": 12
+  },
+  {
+    "usu_id": 13,
+    "usu_nombres": "M",
+    "usu_apellidos": "Miguel",
+    "usu_telefono": "5646545666",
+    "uso_direccion": "Calle 130",
+    "uso_email": "miguel@gmail.com",
+    "uso_tipodoc": 3,
+    "uso_genero": 1,
+    "uso_acudiente": 13
+  },
+  {
+    "usu_id": 14,
+    "usu_nombres": "N",
+    "usu_apellidos": "Natalia",
+    "usu_telefono": "5646545667",
+    "uso_direccion": "Calle 140",
+    "uso_email": "natalia@gmail.com",
+    "uso_tipodoc": 4,
+    "uso_genero": 2,
+    "uso_acudiente": 14
+  },
+  {
+    "usu_id": 15,
+    "usu_nombres": "O",
+    "usu_apellidos": "Octavio",
+    "usu_telefono": "5646545668",
+    "uso_direccion": "Calle 150",
+    "uso_email": "octavio@gmail.com",
+    "uso_tipodoc": 5,
+    "uso_genero": 1,
+    "uso_acudiente": 15
+  },
+  {
+    "usu_id": 16,
+    "usu_nombres": "P",
+    "usu_apellidos": "Pilar",
+    "usu_telefono": "5646545669",
+    "uso_direccion": "Calle 160",
+    "uso_email": "pilar@gmail.com",
+    "uso_tipodoc": 1,
+    "uso_genero": 2,
+    "uso_acudiente": 16
+  },
+  {
+    "usu_id": 17,
+    "usu_nombres": "Q",
+    "usu_apellidos": "Quintín",
+    "usu_telefono": "5646545670",
+    "uso_direccion": "Calle 170",
+    "uso_email": "quintin@gmail.com",
+    "uso_tipodoc": 2,
+    "uso_genero": 1,
+    "uso_acudiente": 17
+  },
+  {
+    "usu_id": 18,
+    "usu_nombres": "R",
+    "usu_apellidos": "Rebeca",
+    "usu_telefono": "5646545671",
+    "uso_direccion": "Calle 180",
+    "uso_email": "rebeca@gmail.com",
+    "uso_tipodoc": 3,
+    "uso_genero": 2,
+    "uso_acudiente": 18
+  },
+  {
+    "usu_id": 19,
+    "usu_nombres": "S",
+    "usu_apellidos": "Sergio",
+    "usu_telefono": "5646545672",
+    "uso_direccion": "Calle 190",
+    "uso_email": "sergio@gmail.com",
+    "uso_tipodoc": 4,
+    "uso_genero": 1,
+    "uso_acudiente": 19
+  },
+  {
+    "usu_id": 20,
+    "usu_nombres": "T",
+    "usu_apellidos": "Tamara",
+    "usu_telefono": "5646545673",
+    "uso_direccion": "Calle 200",
+    "uso_email": "tamara@gmail.com",
+    "uso_tipodoc": 5,
+    "uso_genero": 2,
+    "uso_acudiente": 20
+  }
+]);
+
+db.createCollection("estado_cita");
+db.estado_cita.insertMany([
+  {
+    est_id: 1,
+    nombre: "Programado",
+  },
+  {
+    est_id: 2,
+    nombre: "Confirmada",
+  },
+  {
+    est_id: 3,
+    nombre: "en Curso",
+  },
+  {
+    est_id: 4,
+    nombre: "Completada",
+  },
+  {
+    est_id: 5,
+    nombre: "Cancelada",
+  },
+]);
+
+db.createCollection("especialidad");
+db.especialidad.insertMany([
+  {
+    "_id": 1,
+    "esp_nombre": "Alergología"
+  },
+  {
+    "_id": 2,
+    "esp_nombre": "Cardiología"
+  },
+  {
+    "_id": 3,
+    "esp_nombre": "Dermatología"
+  },
+  {
+    "_id": 4,
+    "esp_nombre": "Endocrinología"
+  },
+  {
+    "_id": 5,
+    "esp_nombre": "Gastroenterología"
+  },
+  {
+    "_id": 6,
+    "esp_nombre": "Hematología"
+  },
+  {
+    "_id": 7,
+    "esp_nombre": "Inmunología"
+  },
+  {
+    "_id": 8,
+    "esp_nombre": "Nefrología"
+  },
+  {
+    "_id": 9,
+    "esp_nombre": "Neurología"
+  },
+  {
+    "_id": 10,
+    "esp_nombre": "Oftalmología"
+  },
+  {
+    "_id": 11,
+    "esp_nombre": "Oncología"
+  },
+  {
+    "_id": 12,
+    "esp_nombre": "Ortopedia"
+  },
+  {
+    "_id": 13,
+    "esp_nombre": "Otorrinolaringología"
+  },
+  {
+    "_id": 14,
+    "esp_nombre": "Pediatría"
+  },
+  {
+    "_id": 15,
+    "esp_nombre": "Psiquiatría"
+  },
+  {
+    "_id": 16,
+    "esp_nombre": "Radiología"
+  },
+  {
+    "_id": 17,
+    "esp_nombre": "Reumatología"
+  },
+  {
+    "_id": 18,
+    "esp_nombre": "Urología"
+  },
+  {
+    "_id": 19,
+    "esp_nombre": "Ginecología"
+  },
+  {
+    "_id": 20,
+    "esp_nombre": "Traumatología"
+  }
+]);
+
+db.createCollection("consultorio");
+db.consultorio.insertMany([
+  {
+    "cons_codigo": 1,
+    "cons_nombre": "Centro Pediátrico Sonrisas"
+  },
+  {
+    "cons_codigo": 2,
+    "cons_nombre": "Clínica Médica Vida Sana"
+  },
+  {
+    "cons_codigo": 3,
+    "cons_nombre": "Hospital San Juan"
+  },
+  {
+    "cons_codigo": 4,
+    "cons_nombre": "Consultorio Médico Salud Integral"
+  },
+  {
+    "cons_codigo": 5,
+    "cons_nombre": "Centro de Especialidades Médicas Esperanza"
+  },
+  {
+    "cons_codigo": 6,
+    "cons_nombre": "Clínica Dental Sonrisa Perfecta"
+  },
+  {
+    "cons_codigo": 7,
+    "cons_nombre": "Hospital Santa María"
+  },
+  {
+    "cons_codigo": 8,
+    "cons_nombre": "Consultorio Cardiológico Corazón Sano"
+  },
+  {
+    "cons_codigo": 9,
+    "cons_nombre": "Centro Médico Bienestar Familiar"
+  },
+  {
+    "cons_codigo": 10,
+    "cons_nombre": "Clínica Oftalmológica Visión Clara"
+  },
+  {
+    "cons_codigo": 11,
+    "cons_nombre": "Hospital General Los Pinos"
+  },
+  {
+    "cons_codigo": 12,
+    "cons_nombre": "Consultorio Ortopédico Movimiento Saludable"
+  },
+  {
+    "cons_codigo": 13,
+    "cons_nombre": "Centro de Psicología Emocional"
+  },
+  {
+    "cons_codigo": 14,
+    "cons_nombre": "Clínica de Dermatología Bella Piel"
+  },
+  {
+    "cons_codigo": 15,
+    "cons_nombre": "Hospital Infantil Estrellitas"
+  },
+  {
+    "cons_codigo": 16,
+    "cons_nombre": "Consultorio Ginecológico Mujer Saludable"
+  },
+  {
+    "cons_codigo": 17,
+    "cons_nombre": "Centro de Fisioterapia Cuerpo en Movimiento"
+  },
+  {
+    "cons_codigo": 18,
+    "cons_nombre": "Clínica de Otorrinolaringología Oído Sano"
+  },
+  {
+    "cons_codigo": 19,
+    "cons_nombre": "Hospital del Corazón"
+  },
+  {
+    "cons_codigo": 20,
+    "cons_nombre": "Consultorio Médico de Nutrición Saludable"
+  }
+]);
+
+db.createCollection("medico");
+db.medico.insertMany([
+  {
+    "med_matricula": 1,
+    "med_nombre": "Sergio Sosa",
+    "med_consultorio": 1,
+    "med_especialidad": 7
+  },
+  {
+    "med_matricula": 2,
+    "med_nombre": "Laura López",
+    "med_consultorio": 2,
+    "med_especialidad": 5
+  },
+  {
+    "med_matricula": 3,
+    "med_nombre": "Carlos Pérez",
+    "med_consultorio": 3,
+    "med_especialidad": 10
+  },
+  {
+    "med_matricula": 4,
+    "med_nombre": "Ana Rodríguez",
+    "med_consultorio": 4,
+    "med_especialidad": 2
+  },
+  {
+    "med_matricula": 5,
+    "med_nombre": "Juan Martínez",
+    "med_consultorio": 5,
+    "med_especialidad": 15
+  },
+  {
+    "med_matricula": 6,
+    "med_nombre": "María García",
+    "med_consultorio": 6,
+    "med_especialidad": 3
+  },
+  {
+    "med_matricula": 7,
+    "med_nombre": "Luis González",
+    "med_consultorio": 7,
+    "med_especialidad": 11
+  },
+  {
+    "med_matricula": 8,
+    "med_nombre": "Carmen López",
+    "med_consultorio": 8,
+    "med_especialidad": 6
+  },
+  {
+    "med_matricula": 9,
+    "med_nombre": "Roberto Fernández",
+    "med_consultorio": 9,
+    "med_especialidad": 17
+  },
+  {
+    "med_matricula": 10,
+    "med_nombre": "Paula Martínez",
+    "med_consultorio": 10,
+    "med_especialidad": 8
+  },
+  {
+    "med_matricula": 11,
+    "med_nombre": "Pedro Sánchez",
+    "med_consultorio": 11,
+    "med_especialidad": 12
+  },
+  {
+    "med_matricula": 12,
+    "med_nombre": "Isabel Pérez",
+    "med_consultorio": 12,
+    "med_especialidad": 19
+  },
+  {
+    "med_matricula": 13,
+    "med_nombre": "Javier Rodríguez",
+    "med_consultorio": 13,
+    "med_especialidad": 1
+  },
+  {
+    "med_matricula": 14,
+    "med_nombre": "Marta González",
+    "med_consultorio": 14,
+    "med_especialidad": 14
+  },
+  {
+    "med_matricula": 15,
+    "med_nombre": "Raúl Fernández",
+    "med_consultorio": 15,
+    "med_especialidad": 9
+  },
+  {
+    "med_matricula": 16,
+    "med_nombre": "Silvia López",
+    "med_consultorio": 16,
+    "med_especialidad": 16
+  },
+  {
+    "med_matricula": 17,
+    "med_nombre": "Hugo Martínez",
+    "med_consultorio": 17,
+    "med_especialidad": 4
+  },
+  {
+    "med_matricula": 18,
+    "med_nombre": "Marina Pérez",
+    "med_consultorio": 18,
+    "med_especialidad": 13
+  },
+  {
+    "med_matricula": 19,
+    "med_nombre": "Emilio Rodríguez",
+    "med_consultorio": 19,
+    "med_especialidad": 18
+  },
+  {
+    "med_matricula": 20,
+    "med_nombre": "Patricia Sánchez",
+    "med_consultorio": 20,
+    "med_especialidad": 20
+  }
+]);
+
+db.createCollection("cita");
+db.cita.insertMany([
+  {
+    "cit_codigo": 1,
+    "cit_fecha": new Date("2014-10-19"),
+    "cit_estado": 1,
+    "cit_medico": 1,
+    "cit_datoUsuario": 1
+  },
+  {
+    "cit_codigo": 2,
+    "cit_fecha": new Date("2015-03-12"),
+    "cit_estado": 3,
+    "cit_medico": 2,
+    "cit_datoUsuario": 2
+  },
+  {
+    "cit_codigo": 3,
+    "cit_fecha": new Date("2016-07-25"),
+    "cit_estado": 5,
+    "cit_medico": 3,
+    "cit_datoUsuario": 3
+  },
+  {
+    "cit_codigo": 4,
+    "cit_fecha": new Date("2017-11-08"),
+    "cit_estado": 2,
+    "cit_medico": 4,
+    "cit_datoUsuario": 4
+  },
+  {
+    "cit_codigo": 5,
+    "cit_fecha": new Date("2018-04-01"),
+    "cit_estado": 4,
+    "cit_medico": 5,
+    "cit_datoUsuario": 5
+  },
+  {
+    "cit_codigo": 6,
+    "cit_fecha": new Date("2019-09-14"),
+    "cit_estado": 1,
+    "cit_medico": 6,
+    "cit_datoUsuario": 6
+  },
+  {
+    "cit_codigo": 7,
+    "cit_fecha": new Date("2020-01-27"),
+    "cit_estado": 3,
+    "cit_medico": 7,
+    "cit_datoUsuario": 7
+  },
+  {
+    "cit_codigo": 8,
+    "cit_fecha": new Date("2021-06-10"),
+    "cit_estado": 5,
+    "cit_medico": 8,
+    "cit_datoUsuario": 8
+  },
+  {
+    "cit_codigo": 9,
+    "cit_fecha": new Date("2022-10-23"),
+    "cit_estado": 2,
+    "cit_medico": 9,
+    "cit_datoUsuario": 9
+  },
+  {
+    "cit_codigo": 10,
+    "cit_fecha": new Date("2023-02-05"),
+    "cit_estado": 4,
+    "cit_medico": 10,
+    "cit_datoUsuario": 10
+  },
+  {
+    "cit_codigo": 11,
+    "cit_fecha": new Date("2024-06-18"),
+    "cit_estado": 1,
+    "cit_medico": 11,
+    "cit_datoUsuario": 11
+  },
+  {
+    "cit_codigo": 12,
+    "cit_fecha": new Date("2025-10-31"),
+    "cit_estado": 3,
+    "cit_medico": 12,
+    "cit_datoUsuario": 12
+  },
+  {
+    "cit_codigo": 13,
+    "cit_fecha": new Date("2026-03-14"),
+    "cit_estado": 5,
+    "cit_medico": 13,
+    "cit_datoUsuario": 13
+  },
+  {
+    "cit_codigo": 14,
+    "cit_fecha": new Date("2027-07-27"),
+    "cit_estado": 2,
+    "cit_medico": 14,
+    "cit_datoUsuario": 14
+  },
+  {
+    "cit_codigo": 15,
+    "cit_fecha": new Date("2028-12-09"),
+    "cit_estado": 4,
+    "cit_medico": 15,
+    "cit_datoUsuario": 15
+  },
+  {
+    "cit_codigo": 16,
+    "cit_fecha": new Date("2029-04-23"),
+    "cit_estado": 1,
+    "cit_medico": 16,
+    "cit_datoUsuario": 16
+  },
+  {
+    "cit_codigo": 17,
+    "cit_fecha": new Date("2030-09-05"),
+    "cit_estado": 3,
+    "cit_medico": 17,
+    "cit_datoUsuario": 17
+  },
+  {
+    "cit_codigo": 18,
+    "cit_fecha": new Date("2031-01-19"),
+    "cit_estado": 5,
+    "cit_medico": 18,
+    "cit_datoUsuario": 18
+  },
+  {
+    "cit_codigo": 19,
+    "cit_fecha": new Date("2032-05-03"),
+    "cit_estado": 2,
+    "cit_medico": 19,
+    "cit_datoUsuario": 19
+  },
+  {
+    "cit_codigo": 20,
+    "cit_fecha": new Date("2033-09-16"),
+    "cit_estado": 4,
+    "cit_medico": 20,
+    "cit_datoUsuario": 20
+  }
+]);
